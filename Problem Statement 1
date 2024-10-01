@@ -1,0 +1,18 @@
+def main():
+    expenses = input("Enter total expenses: $")
+    discount = input("Enter discount percentage: ")
+
+    if expenses.replace('.', '', 1).isdigit() and discount.replace('.', '', 1).isdigit():
+        expenses = float(expenses)
+        discount = float(discount)
+
+        if 0 <= discount <= 100:
+            final_amount = expenses * (1 - discount / 100)
+            print(f"Final Amount: ${final_amount:.2f}")
+        else:
+            print("Invalid discount percentage.")
+    else:
+        print("Invalid input! Please enter numeric values.")
+
+if __name__ == "__main__":
+    main()
